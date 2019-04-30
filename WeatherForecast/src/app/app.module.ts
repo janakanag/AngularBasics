@@ -15,6 +15,6 @@ import { WeatherComponent } from './components/weather/weather.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [WeatherComponent]
 })
 export class AppModule { }
