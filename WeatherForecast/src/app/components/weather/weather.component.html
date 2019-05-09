@@ -2,8 +2,10 @@
 <table>
   <tr *ngFor="let weather of weatherDetails">
     <td>
-        {{weather.city}}
-        {{weather.description}}
+        {{weather.city | uppercase}}
+        <br>
+        <img [src]="weather.description | descriptionConverter: weather.description" style="width:100px;height:70px;border:0;"/>
+        <br>
         {{weather.temperature}}
     </td>
   </tr>

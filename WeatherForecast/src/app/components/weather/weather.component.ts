@@ -20,8 +20,8 @@ export class WeatherComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.weatherDetails = [ {city:'Melbourne',description:'sunny',temperature:22},
-                            {city:'Sydney',description:'partially sunny',temperature:20},
+    this.weatherDetails = [ {city:'Melbourne',description:'Sunny',temperature:22},
+                            {city:'Sydney',description:'Partially sunny',temperature:20},
                             {city:'New York',description:'Rain',temperature:16},
                             {city:'Delhi',description:'Sunny',temperature:30}];                       
   }
