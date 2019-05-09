@@ -1,31 +1,10 @@
 
-<!-- Interpolation binding -->
-<p>
-  {{testValue}}
-</p>
-
-<br>
-
-<!-- Property binding -->
-<img [src]='imgLocation'>
-
-<br>
-
-<!-- Event binding-->
-<button (click) = 'showAlert()'>test</button>
-
-<br>
-
-<!-- Two-Way binding -->
-<input [(ngModel)]='twowayvalue'>  <p>Hello {{twowayvalue}} !</p>
-
-<br>
-
-<!-- directives -->
- <ul>
-   <li *ngFor = "let arrayValue of testArrayValue">
-        {{arrayValue}}
-   </li>
- </ul>
-
- <p *ngIf = "testValue"> value exists {{testValue}}</p>
+<table>
+  <tr *ngFor="let weather of weatherDetails">
+    <td>
+        {{weather.city}}
+        {{weather.description}}
+        {{weather.temperature}}
+    </td>
+  </tr>
+</table>

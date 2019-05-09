@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  WeatherDetail} from '../../model/WeatherDetail';
 
 
 @Component({
@@ -8,11 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherComponent implements OnInit {
 
-  testValue : string = 'hello Interpolation';
-  imgLocation : string ='assets/intermittent.jpg';
-  twowayvalue : string;
+  weatherDetails : WeatherDetail[];
 
-  testArrayValue : string[] = ['hello','to', 'Directives'];
 
 
   showAlert(){
@@ -22,6 +20,9 @@ export class WeatherComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.weatherDetails = [ {city:'Melbourne',description:'sunny',temperature:22},
+                            {city:'Sydney',description:'partially sunny',temperature:20},
+                            {city:'New York',description:'Rain',temperature:16},
+                            {city:'Delhi',description:'Sunny',temperature:30}];                       
   }
-
 }
