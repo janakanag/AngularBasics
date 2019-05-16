@@ -1,12 +1,10 @@
-
-<table>
-  <tr *ngFor="let weather of weatherDetails">
-    <td>
-        {{weather.city | uppercase}}
+<ul>
+    <li *ngFor="let weather of weatherDetails">
+       <span>{{weather.city | uppercase}}
         <br>
         <img [src]="weather.description | descriptionConverter: weather.description" style="width:100px;height:70px;border:0;"/>
         <br>
         {{weather.temperature}}
-    </td>
-  </tr>
-</table>
+      </span> 
+    </li>
+  </ul>
