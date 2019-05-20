@@ -1,10 +1,11 @@
 <ul>
     <li *ngFor="let weather of weatherDetails">
-       <span>{{weather.city | uppercase}}
-        <br>
-        <img [src]="weather.description | descriptionConverter: weather.description" style="width:100px;height:70px;border:0;"/>
-        <br>
-        {{weather.temperature}}
-      </span> 
+       <div class="weatherElement">
+            <p class="cityDisplay">{{weather.city | uppercase}}</p>
+            <img [src]="weather.description | descriptionConverter: weather.description" 
+                       style="width:130px;height:90px;border:0;float:right;"/>
+            <p class="tempDisplay">{{weather.temperature}} &#176;</p>
+            <p class="tempTextDisplay">{{weather.description}}</p>
+       </div> 
     </li>
-  </ul>
+</ul>

@@ -1,0 +1,38 @@
+ul {
+  list-style-type: none;
+ }
+
+li{
+  margin: 10px 0;
+}
+
+.tempDisplay{
+  font-size:60px;
+  color: #515589;
+  margin: 10px;
+}
+
+.tempTextDisplay{
+  font-size:12px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+  font-weight: bold;
+  color: #1f267a;
+  margin: 5px;
+
+}
+
+.cityDisplay{
+  font-size:20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+  font-weight: bold;
+  color: #1f267a;
+  margin: 5px;
+}
+
+.weatherElement{
+  border-radius: 7px;
+  border: 3px solid #868aba;  
+  padding: 10px; 
+  width: 400px;
+  height: 130px;
+}
