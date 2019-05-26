@@ -1,11 +1,18 @@
-<ul>
-    <li *ngFor="let weather of weatherDetails">
-       <div class="weatherElement">
-            <p class="cityDisplay">{{weather.city | uppercase}}</p>
-            <img [src]="weather.description | descriptionConverter: weather.description" 
-                       style="width:130px;height:90px;border:0;float:right;"/>
-            <p class="tempDisplay">{{weather.temperature}} &#176;</p>
-            <p class="tempTextDisplay">{{weather.description}}</p>
-       </div> 
-    </li>
-</ul>
+<div class="weatherList">
+    <ul>
+        <li *ngFor="let weather of weatherDetails"
+            (click)="onCitySelect(weather.city)">
+           <div class="weatherElement">
+                <p class="cityDisplay">{{weather.city | uppercase}}</p>
+                <img [src]="weather.description | descriptionConverter: weather.description" 
+                           style="width:130px;height:90px;border:0;float:right;"/>
+                <p class="tempDisplay">{{weather.temperature}} &#176;</p>
+                <p class="tempTextDisplay">{{weather.description}}</p>
+           </div> 
+        </li>
+    </ul>
+</div>
+<div class="weatherDetails">
+    <weather-details [city]="selectedCity"></weather-details>
+</div>
+

@@ -4,6 +4,17 @@ ul {
 
 li{
   margin: 10px 0;
+  cursor: pointer;
+}
+
+.weatherList{
+  float:left;
+  padding:20px;
+}
+
+.weatherDetails{
+  float:right;
+  padding:20px;
 }
 
 .tempDisplay{

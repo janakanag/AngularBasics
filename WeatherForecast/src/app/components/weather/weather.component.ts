@@ -11,13 +11,13 @@ export class WeatherComponent implements OnInit {
 
   weatherDetails : WeatherDetail[];
 
-
-
-  showAlert(){
-    alert("Button clicked via Event binding !!!!");
-  }
+  selectedCity : string;
 
   constructor() { }
+
+  onCitySelect(city :string ): void {
+    this.selectedCity = city;
+  }
 
   ngOnInit() {
     this.weatherDetails = [ {city:'Melbourne',description:'Sunny',temperature:22},
