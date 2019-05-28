@@ -1,3 +1,10 @@
-<h1 *ngIf=city>
-  {{city}}'s Hourly Forecast for today
-</h1>
+<div *ngIf=city>
+  <h1>
+    {{city}}'s Hourly Forecast for today
+  </h1>
+  <nav> 
+    <a routerLink="/weeklyView">Weekly View</a>
+    <a routerLink="/hourlyView">Hourly Temperature</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

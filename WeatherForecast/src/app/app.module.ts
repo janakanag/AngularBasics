@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { DescriptionConverterPipe } from './pipes/description-converter.pipe';
 import { WeatherDetailsComponent } from './components/weather-details/weather-details.component';
+import { WeeklyViewComponent } from './components/weather-details/weekly-view/weekly-view.component';
+import { HourlyViewComponent } from './components/weather-details/hourly-view/hourly-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     DescriptionConverterPipe,
-    WeatherDetailsComponent
+    WeatherDetailsComponent,
+    WeeklyViewComponent,
+    HourlyViewComponent
   ],
   imports: [
     BrowserModule,
