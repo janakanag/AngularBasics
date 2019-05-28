@@ -5,7 +5,9 @@ import { HourlyViewComponent } from './components/weather-details/hourly-view/ho
 
 const routes: Routes = [
   {path:'weeklyView', component:WeeklyViewComponent},
-  {path:'hourlyView', component:HourlyViewComponent}
+  {path:'hourlyView', component:HourlyViewComponent},
+
+  {path: '', redirectTo: '/hourlyView', pathMatch: 'full' }
 ];
 
 @NgModule({
