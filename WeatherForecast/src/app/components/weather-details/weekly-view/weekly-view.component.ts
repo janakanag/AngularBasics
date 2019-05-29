@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-weekly-view',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeeklyViewComponent implements OnInit {
 
-  constructor() { }
+  cityName : string;
+
+  constructor(private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
+    this.getCityDescription();
+  }
+
+  getCityDescription():void{
+    this.cityName =  this.activatedRoute.snapshot.paramMap.get('cityDescription');
   }
 
 }

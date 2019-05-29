@@ -4,8 +4,8 @@ import { WeeklyViewComponent } from './components/weather-details/weekly-view/we
 import { HourlyViewComponent } from './components/weather-details/hourly-view/hourly-view.component';
 
 const routes: Routes = [
-  {path:'weeklyView', component:WeeklyViewComponent},
-  {path:'hourlyView', component:HourlyViewComponent},
+  {path:'weeklyView/:cityDescription', component:WeeklyViewComponent},
+  {path:'hourlyView/:cityDescription', component:HourlyViewComponent},
 
   {path: '', redirectTo: '/hourlyView', pathMatch: 'full' }
 ];
