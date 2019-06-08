@@ -7,7 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WeatherDetailsComponent implements OnInit {
 
-  @Input() city : string;
+  city : string;
+
+  @Input()
+  set cityInput(cityInputValue:string){
+    this.city = cityInputValue;
+    
+  }
 
   constructor() { }
 
