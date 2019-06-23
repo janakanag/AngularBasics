@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  WeatherDetail} from '../../model/WeatherDetail';
+import { WeatherService} from '../../services/weather.service';
 
 
 @Component({
@@ -13,16 +14,13 @@ export class WeatherComponent implements OnInit {
 
   selectedCity : string;
 
-  constructor() { }
+  constructor(private weatherService:WeatherService) { }
 
   onCitySelect(city :string ): void {
     this.selectedCity = city;
   }
 
   ngOnInit() {
-    this.weatherDetails = [ {city:'Melbourne',description:'Sunny',temperature:22},
-                            {city:'Sydney',description:'Partially sunny',temperature:20},
-                            {city:'New York',description:'Rain',temperature:16},
-                            {city:'Delhi',description:'Sunny',temperature:30}];                       
+    this.weatherDetails = this.weatherService.getWeatherSummary();                     
   }
 }
