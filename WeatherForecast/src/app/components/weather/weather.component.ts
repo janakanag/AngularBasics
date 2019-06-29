@@ -10,7 +10,7 @@ import { WeatherService} from '../../services/weather.service';
 })
 export class WeatherComponent implements OnInit {
 
-  weatherDetails : WeatherDetail[];
+  weatherDetails : WeatherDetail[]=[];
 
   selectedCity : string;
 
@@ -21,6 +21,21 @@ export class WeatherComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.weatherDetails = this.weatherService.getWeatherSummary();                     
+    
+    const weatherObservable = this.weatherService.getWeatherSummaryObservable();
+        weatherObservable.subscribe(
+          //next notification
+          weatherDetail => {
+            this.weatherDetails.push(weatherDetail);
+          },
+          //error notification
+          error=> {
+            console.log(" got error "+ error);
+          }, 
+          // complete notification
+          ()=>{
+            console.log(" completed");
+          },
+      );                    
   }
 }
