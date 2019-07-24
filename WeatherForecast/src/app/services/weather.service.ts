@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { WeatherDetail } from '../model/WeatherDetail';
-import { Observable } from "rxjs"
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable,throwError } from "rxjs";
+import { catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
 
-  constructor() { }
+  baseURL:string = "<base URL of the REST service Goes Here>";
+
+  constructor(private httpClient:HttpClient) { }
 
   weatherDetails =  [ {city:'Melbourne',description:'Sunny',temperature:22},
                       {city:'Sydney',description:'Partially sunny',temperature:20},
@@ -18,18 +22,18 @@ export class WeatherService {
     return this.weatherDetails;
   }
 
-  getWeatherSummaryObservable(): any{
+  getWeatherSummaryObservable(): Observable<any>{
 
     //create a new observable and return the weather details
-    const weatherObservable = new Observable(observer => {
-
-            for(var index in this.weatherDetails){
-                observer.next(<WeatherDetail>this.weatherDetails[index]);    
-            }
-             observer.complete();
-          });
-
-     return weatherObservable;
-  
+    return this.httpClient.get<any>(this.baseURL+'/summary', { responseType: 'json' })
+    .pipe(
+      catchError(this.handleError));
     }
+
+
+    private handleError(err: HttpErrorResponse) {
+      console.error(err);
+      return throwError(err.message);
+    }
+  
 }

@@ -25,8 +25,8 @@ export class WeatherComponent implements OnInit {
     const weatherObservable = this.weatherService.getWeatherSummaryObservable();
         weatherObservable.subscribe(
           //next notification
-          weatherDetail => {
-            this.weatherDetails.push(weatherDetail);
+          retrievedWeatherDetails => {
+            this.weatherDetails = retrievedWeatherDetails["details"];
           },
           //error notification
           error=> {
